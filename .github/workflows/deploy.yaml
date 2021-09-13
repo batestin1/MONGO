@@ -1,0 +1,31 @@
+name: deploy to Bucket
+
+on:
+  push:
+    branches: [mongo]
+
+jobs:
+  deploy:
+    name: Deploy to MONGO
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mongodb-version: [3.6, 4.0, 4.2]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+
+
+    steps:
+    - name: Start MongoDB v${{ matrix.mongodb-version }}
+      uses: maycon batestin
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+
+    - run: echo "done"
