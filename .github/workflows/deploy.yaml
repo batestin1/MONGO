@@ -20,12 +20,12 @@ jobs:
       with:
         python-version: 3.8
 
-
-
-    steps:
-    - name: Start MongoDB v${{ matrix.mongodb-version }}
-      uses: maycon batestin
+    - name: MongoDB in GitHub Actions
+      uses: supercharge/mongodb-github-action@1.6.0
       with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-
-    - run: echo "done"
+    # MongoDB version to use (default "latest")
+        mongodb-version: # optional, default is latest
+    # MongoDB replica set name (no replica set by default)
+        mongodb-replica-set: # optional, default is 
+    # MongoDB port to use (default 27017)
+        mongodb-port: # optional, default is 27017
