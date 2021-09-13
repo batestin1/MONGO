@@ -8,9 +8,7 @@ jobs:
   deploy:
     name: Deploy to MONGO
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        mongodb-version: [3.6, 4.0, 4.2]
+  
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +22,7 @@ jobs:
       uses: supercharge/mongodb-github-action@1.6.0
       with:
     # MongoDB version to use (default "latest")
-        mongodb-version: # optional, default is latest
+        mongodb-version: 4.4.3
     # MongoDB replica set name (no replica set by default)
         mongodb-replica-set: # optional, default is 
     # MongoDB port to use (default 27017)
