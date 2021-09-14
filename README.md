@@ -7,5 +7,5 @@
 
 Arquitetura da solução:
 
-![delta](img/edc_mod1_delta.png)
+[delta](img/edc_mod1_delta.png)
 
